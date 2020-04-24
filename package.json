@@ -1,0 +1,31 @@
+{
+  "name": "2020-04-24-meme-maker",
+  "version": "1.0.0",
+  "description": "A Web based Meme Generator",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumedh-Patkar/2020-04-24-meme-maker.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "express",
+    "meme"
+  ],
+  "author": "Sumedh Patkar <sumedh.patkar19@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sumedh-Patkar/2020-04-24-meme-maker/issues"
+  },
+  "homepage": "https://github.com/Sumedh-Patkar/2020-04-24-meme-maker#readme"
+}
