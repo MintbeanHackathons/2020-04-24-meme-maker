@@ -5,8 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mintbean Hackathons: Meme Maker</title>
     <link rel="stylesheet" href="./styles/setup.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./scripts/images.js"></script>
   </head>
   <body>
     <h1>Meme Maker</h1>
+    <div class="meme-editor" contenteditable="true">
+      <!-- height="413px" width="550px" -->
+      <svg viewBox="0 0 550 413" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .impact {
+            fill: white;
+            stroke: black;
+            stroke-width: 1.8px;
+            font-family: "Impact", sans-serif;
+            font-size: 3rem;
+          }
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+
+          text {
+            text-anchor: middle;
+          }
+
+          image {
+            border: 0;
+            display: block;
+          }
+        </style>
+        <image
+          href="./assets/baby-panda.jpg"
+          x="0"
+          y="0"
+          height="413px"
+          width="550px"
+        ></image>
+        <text class="impact" x="50%" y="11%"></text>
+        <text class="impact" x="50%" y="90%">Haters gonna hate</text>
+      </svg>
+    </div>
+    <img />
+    <canvas></canvas>
+    <a id="dl" download="meme.png" href="#">Download .png</a>
   </body>
 </html>

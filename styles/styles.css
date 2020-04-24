@@ -1,0 +1,8 @@
+.meme-editor,
+img,
+canvas {
+  width: 550px;
+  height: 413px;
+  margin: 1rem;
+  display: block;
+}
