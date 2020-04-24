@@ -7,7 +7,7 @@
     align-self: top;
     position: relative;
 }
-#meme-edit-viewer image{
+#meme-edit-viewer img{
     width: 50%;
     float: right;
     position: absolute;

@@ -1,6 +1,6 @@
 function changeBackgroundImage(){
     let url = document.getElementById("background-image-input").value;
-    document.getElementById("image-in-meme").href = url;
+    document.getElementById("image-in-meme").src = url;
     document.getElementById("background-image-input").value = "";
 }
 
