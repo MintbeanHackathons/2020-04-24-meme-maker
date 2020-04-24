@@ -1,0 +1,25 @@
+<div class="container-fluid d-flex flex-row" style=" height:90vh;">
+    <div class="align-self-center" contenteditable="true">
+        <svg width="500" height="500">
+        <image id="selected-image" href="{{memes.0.url}}" width="500" height="500"></image>
+        <text y="2em">Sample text</text>
+        </svg>
+    </div>
+</div>
+
+<footer class="d-flex flex-row">
+    {{#each memes}} 
+        <img class="meme-templates" src="{{ this.url }}" alt="{{ this.name }}"> 
+    {{/each}}
+</footer>
+
+<script>
+    $('.meme-templates').click((e) => {
+        console.log("Clicked on image")
+
+        imageURL = e.target.attributes.src.value
+
+        //This logic doesn't work though. The image doesn't change
+        document.getElementById("selected-image").src = imageURL
+    })
+</script>
