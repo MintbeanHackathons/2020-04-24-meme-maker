@@ -3,12 +3,21 @@
 
 
 <body>
+
+    <!--Create a form for text input.-->
+    <!--<form>
+        <label for="topTxt">Top Text</label><br />
+        <input type="text" id="topTxt" name="topTxt" /><br />
+        <label for="btmTxt">Bottom Text</label><br />
+        <input type="text" id="btmTxt" name="btmTxt" /><br />
+    </form>
+    <button type="submit" onclick="alert('Submitted!')">Make Meme!</button>-->
+
     SVG
     <div contenteditable="true">
         <svg height="100">
-            <image></image>
-            <text y="20">Hello </text>
-            <text y="80">World</text>
+            <text id="tpTxt" y="20">Enter or Delete Text Here</text>
+            <text id ="btmTxt" y="80">Enter or Delete Text Here</text>
         </svg>
     </div>
 
@@ -25,7 +34,8 @@
         var img = document.querySelector('img');
         var canvas = document.querySelector('canvas');
         //adding another variable
-        var text = document.querySelector('text');
+        //var text = document.querySelector('text');
+        //Nope, canvas hates this
 
         // get svg data
         var xml = new XMLSerializer().serializeToString(svg);
