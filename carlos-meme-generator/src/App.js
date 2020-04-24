@@ -7,11 +7,14 @@ import mintBean from './images/mintbeanlogo.png';
 function App() {
   const [topText, setTopText] = useState("Top Text");
   const [bottomText, setBottomText] = useState("Bottom Text");
-  
+  const [imageUrl, setImageUrl] = useState(window.location.origin + mintBean);
+
   const handleChange = (event) => {
     if (event.target.name === "top"){
       setTopText(event.target.value)
-    } else {
+    } else if (event.target.name === "imageUrl"){
+      setImageUrl(event.target.value)
+    } else{
       setBottomText(event.target.value)
     }
   }
@@ -26,7 +29,7 @@ function App() {
           <div className="row">
             <div className="col-6">
               <Canvas
-                imageURL={mintBean}
+                imageUrl={imageUrl}
                 textTop={topText}
                 textBottom={bottomText}
               />
@@ -35,6 +38,7 @@ function App() {
               <Inputs
                 topText={topText}
                 bottomText={bottomText}
+                imageUrl={imageUrl}
                 handleChange={handleChange}
               />
             </div>
