@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 const ImageEditor = (props) => {
 	const [topText, setTopText] = useState('');
 	const [bottomText, setBottomText] = useState('');
-	const [svgRef, setsvgRef] = useState(null);
 
 	const convertToImage = () => {
 		//getting the SVG data
@@ -40,49 +39,70 @@ const ImageEditor = (props) => {
 
 	return (
 		<div>
-			<form>
-				<label> top text</label>
-				<input
-					type="text"
-					value={topText}
-					onChange={(e) => setTopText(e.target.value)}
-				/>
+			<div className="container">
+				<div className="columns">
+					<div className="column is-four-fifths">
+						<svg
+							height="600"
+							width="600"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlnsXlink="http://www.w3.org/1999/xlink"
+						>
+							<image height="600" width="600" href={props.imgURL} />
+							<text
+								x="50%"
+								y="10%"
+								textAnchor="middle"
+								dominantBaseline="middle"
+								style={textStyle}
+							>
+								{topText}
+							</text>
+							<text
+								x="50%"
+								y="90%"
+								textAnchor="middle"
+								dominantBaseline="middle"
+								style={textStyle}
+							>
+								{bottomText}
+							</text>
+						</svg>
+					</div>
 
-				<label>bottom text</label>
-				<input
-					type="text"
-					value={bottomText}
-					onChange={(e) => setBottomText(e.target.value)}
-				/>
-			</form>
-			<button onClick={() => convertToImage()}>download meme</button>
+					<div className="column">
+						<form>
+							<div className="field">
+								<label className="label"> top text</label>
+								<div className="control">
+									<input
+										className="input"
+										type="text"
+										value={topText}
+										onChange={(e) => setTopText(e.target.value)}
+									/>
+								</div>
+							</div>
 
-			<svg
-				height="600"
-				width="600"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlnsXlink="http://www.w3.org/1999/xlink"
-			>
-				<image height="600" width="600" href={props.imgURL} />
-				<text
-					x="50%"
-					y="10%"
-					textAnchor="middle"
-					dominantBaseline="middle"
-					style={textStyle}
-				>
-					{topText}
-				</text>
-				<text
-					x="50%"
-					y="90%"
-					textAnchor="middle"
-					dominantBaseline="middle"
-					style={textStyle}
-				>
-					{bottomText}
-				</text>
-			</svg>
+							<div className="field">
+								<label className="label">bottom text</label>
+								<input
+									className="input"
+									type="text"
+									value={bottomText}
+									onChange={(e) => setBottomText(e.target.value)}
+								/>
+								<button
+									className="button is-primary is-light"
+									onClick={() => convertToImage()}
+								>
+									download meme
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

@@ -13,28 +13,29 @@ function App() {
 		setUploaded(true);
 	};
 
+	const fileUploader = (
+		<div class="file">
+			<label class="file-label">
+				<input
+					type="file"
+					className="file-input"
+					onChange={(event) => handleUpload(event)}
+				/>
+				<span class="file-cta">
+					<span class="file-icon">
+						<i class="fas fa-upload"></i>
+					</span>
+					<span class="file-label">Choose a file…</span>
+				</span>
+			</label>
+		</div>
+	);
 	return (
 		<div className="App">
 			<div className="container has-text-centered">
 				<h1 className="title is-1 is-spaced">CAN YOU MEME IT?</h1>
 
-				<div class="file">
-					<label class="file-label">
-						<input
-							type="file"
-							className="file-input"
-							onChange={(event) => handleUpload(event)}
-						/>
-						<span class="file-cta">
-							<span class="file-icon">
-								<i class="fas fa-upload"></i>
-							</span>
-							<span class="file-label">Choose a file…</span>
-						</span>
-					</label>
-
-					{uploaded ? <ImageEditor imgURL={imgURL} /> : null}
-				</div>
+				{uploaded ? <ImageEditor imgURL={imgURL} /> : fileUploader}
 			</div>
 		</div>
 	);
