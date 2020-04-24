@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Meme Generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="site.css">
+    </head>
+    <body>
+        <div id="meme-edit-viewer" contenteditable="true">
+            <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" id="meme-svg">
+                <text x="10" y="20" class="text">Several lines:
+                    <tspan x="10" y="45">First line.</tspan>
+                    <tspan x="10" y="70">Second line.</tspan>
+                </text>
+                
+                <image href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.UtgXRfq5DsTwjkq4cWA-VQHaNK%26pid%3DApi&f=1" alt="image" id="image-in-meme">
+            </svg>
+            <script src="" async defer></script>
+        </div>
+        <canvas id="myCanvas"></canvas>
+        <div id="meme-edit-viewer">
+            <input type="text" id="background-image-input" placeholder="Image URL">
+            <button onclick="changeBackgroundImage()">Change Background</button>
+        </div>
+        <button onclick="generateImage()">Generate IMG</button>
+        <img id="meme-img">
+        <canvas id="meme-canvas"></canvas>
+        <a id="dl" download="Canvas.png" href="#">Download Canvas</a>
+        <script src="site.js"></script>
+    </body>
+</html>
