@@ -1,0 +1,19 @@
+svg, img, canvas {
+    display: flex;
+  }
+
+text {
+    text-align: center;
+    font-size: large;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item {
+    height: 300px;
+    margin-bottom: 10px;
+  }
