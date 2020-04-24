@@ -92,14 +92,14 @@ const ImageEditor = (props) => {
 									value={bottomText}
 									onChange={(e) => setBottomText(e.target.value)}
 								/>
-								<button
-									className="button is-primary is-light"
-									onClick={() => convertToImage()}
-								>
-									download meme
-								</button>
 							</div>
 						</form>
+						<button
+							className="button is-primary is-light"
+							onClick={() => convertToImage()}
+						>
+							download meme
+						</button>
 					</div>
 				</div>
 			</div>
