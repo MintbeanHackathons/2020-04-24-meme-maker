@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import FormContent from './FormContent'
+import FormStyle from './FormStyle'
 import "./App.css";
 
 const dw = 500;
@@ -9,6 +11,9 @@ function Board() {
   const [textTop, setTextTop] = useState("");
   const [textBotton, setTextBotton] = useState("");
   const [file, setFile] = useState();
+  const [weight, setWeight] = useState("bold")
+  const [size, setSize] = useState("3em")
+  const [color, setColor] = useState("black")
 
   const canvas = useRef(null);
 
@@ -16,8 +21,8 @@ function Board() {
     const context = canvas.current.getContext("2d");
     const image = new Image();
     context.clearRect(0, 0, dw, dh);
-    context.font = "bold 3em sans-serif";
-
+    context.font = `${weight} ${size} sans-serif`;
+    context.fillStyle = color;
     context.fillText(textTop, 0, 50);
     context.fillText(textBotton, 0, dh - 50);
 
@@ -36,23 +41,19 @@ function Board() {
   const handleText = ({ target: { value, id } }) =>
     id === "top" ? setTextTop(value) : setTextBotton(value);
 
+  const handleStyle = ({target: {id, value}}) => {
+    id === "color" && setColor(value)
+    id === "size" && setSize(value)
+    id === "weight" && setWeight(value)
+  }
+
 
   return (
     <>
       <canvas id="canvas" ref={canvas} width={dw} height={dh} />
-      <div>
-        <p>Add top text</p>
-        <input id="top" type="text" value={textTop} onChange={handleText} />
-        <p>Add botton text</p>
-        <input
-          id="botton"
-          type="text"
-          value={textBotton}
-          onChange={handleText}
-        />
-        <p>Add your image</p>
-        <input type="file" onChange={handleImg} />
-        <a download="image.png" href={file}>DOWNLOAD</a>
+      <div className="form">
+      <FormContent textTop={textTop} textBotton={textBotton} handleText={handleText} handleImg={handleImg} file={file}/>
+      <FormStyle color={color} size={size} weight={weight} handleStyle={handleStyle}/>
       </div>
     </>
   );
