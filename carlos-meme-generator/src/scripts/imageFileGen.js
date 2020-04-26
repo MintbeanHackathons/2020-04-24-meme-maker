@@ -1,7 +1,7 @@
 
 function dlCanvas() {
   var svg = document.querySelector('svg');
-  var img = document.querySelector('#memeImg');
+  var img = document.querySelector('img');
   var canvas = document.querySelector('canvas');
   
   // get svg data
@@ -23,7 +23,8 @@ function dlCanvas() {
   var dt = canvas.toDataURL('image/png'); // << this fails in IE/Edge...
   dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
   dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png');
-  this.href = dt;
+  const a = document.querySelector('#dlanchor')
+  a.href = dt;
 };
 
 export default dlCanvas;

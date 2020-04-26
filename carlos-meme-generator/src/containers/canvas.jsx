@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Canvas = ({imageUrl, textTop, textBottom}) => {
+const Canvas = ({imageUrl, textTop, textBottom, svgRef}) => {
   return(
     <div>
-      <svg height="300">
+      <svg height="300" ref={svgRef}>
         <image x="50%" y="50%" href={imageUrl} height="250" width="250" transform="translate(-125,-125)"></image>
         
         <text x="50%" y="2em" textAnchor="middle">{textTop}</text>
